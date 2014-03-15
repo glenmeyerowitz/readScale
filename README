@@ -1,0 +1,6 @@
+This project allows you to connect a standard digital bathroom scale to an Arduino to read the analog output. Here, I use a Walgreens Digital Glass Scale, but any other type of digital scale should have a similar procedure. 
+
+This contains an instructions document which goes through the procedures required to connect the scale to the Arduino and the calibration steps. The code for the Arduino is also here. 
+
+March 15, 2014
+Glen Meyerowitz
