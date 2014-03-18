@@ -3,9 +3,9 @@
 
   The current code has been calibrated and works with a Walgreens Digital Glass Scale. A full document on 
   how to connect the scale to the Arduino can be found online at http://github.com/glenmeyerowitz/readScale. 
-  The scale will need to be calibrated before use. Calibration instuctions are also online. 
+  The scale will need to be calibrated before use. Calibration instructions are also online. 
 
-  March 15, 2014
+  March 17, 2014
   Glen Meyerowitz
 
   This code is in the public domain. 
@@ -35,7 +35,7 @@ void loop() {
   // average lots of readings together to get a stable value
   for(int i=1; i<=iter; i++){
       scaleValue += analogRead(scalePin);
-      scaleValue -= 532.8;
+      scaleValue -= 545.25;
       delay(15);
   }
   
