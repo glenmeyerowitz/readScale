@@ -5,7 +5,7 @@
   how to connect the scale to the Arduino can be found online at http://github.com/glenmeyerowitz/readScale. 
   The scale will need to be calibrated before use. Calibration instructions are also online. 
 
-  March 17, 2014
+  March 21, 2014
   Glen Meyerowitz
 
   This code is in the public domain. 
@@ -32,20 +32,20 @@ void loop() {
 
   // turn scale on before data collection
   digitalWrite(scalePowerPin, LOW);
+  delay(2500);
+  
   // average lots of readings together to get a stable value
   for(int i=1; i<=iter; i++){
       scaleValue += analogRead(scalePin);
-      scaleValue -= 545.25;
-      delay(15);
   }
   
   // print out the value you read:
   scaleValue = scaleValue / iter;
-  weight = 0.001*scaleValue*scaleValue + 4.5899*scaleValue + 0.0007;
+  weight = -0.00392590100618584*scaleValue*scaleValue + 8.92845692964501*scaleValue - 3649.30220197361;
   Serial.println(weight);
 
   // turn scale off after data collection
   digitalWrite(scalePowerPin, HIGH);
 
-  delay(100); // wait 0.1 seconds before collecting more data
+  delay(10000); // wait 10 seconds before collecting more data
 }
